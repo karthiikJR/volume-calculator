@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📐 Precision Volume Calculator
 
-## Getting Started
+A modern, high-precision web application designed to calculate volume and weight for various 3D shapes. Built with a focus on visual clarity, responsiveness, and ease of use.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **15+ 3D Shapes**: Supports everything from basic cubes to complex truncated pyramids and spherical caps.
+- **Real-time Calculations**: Instant volume updates as you type.
+- **Dynamic SVG Diagrams**: Visual representation for every shape to clarify parameters.
+- **Comprehensive Units**: Support for metric and imperial units, ranging from millimeters (mm) to nautical miles (nmi).
+- **High Precision**: Handles extreme values with clean scientific notation or localized formatting.
+- **Modern UI**: Sleek, glassmorphic design using shadcn/ui and custom CSS.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Components**: [Radix UI](https://www.radix-ui.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Theming**: Dark mode optimized CSS variables.
+
+## 📐 Supported Shapes
+
+| Category | Shapes |
+| :--- | :--- |
+| **Prisms** | Cube, Rectangular Prism, Triangular Prism |
+| **Curved** | Sphere, Hemisphere, Ellipsoid, Capsule |
+| **Cylindrical** | Cylinder, Hollow Cylinder / Tube |
+| **Conical** | Cone, Conical Frustum |
+| **Pyramidal** | Pyramid, Truncated Pyramid |
+| **Advanced** | Spherical Cap |
+
+## 📏 Supported Units
+
+- **Metric**: mm, cm, m, km
+- **Imperial**: in, ft, yd, mi
+- **Marine**: nmi (nautical miles)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+ 
+- npm / pnpm / yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app`: Next.js App Router (layout, page, globals).
+- `src/components`: UI components and the main `VolumeCalculator`.
+- `src/components/ui`: Base Radix-based UI elements.
+- `src/lib`: Core logic for volume math (`volumes.ts`) and unit conversions (`units.ts`).
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
