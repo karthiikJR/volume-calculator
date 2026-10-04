@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -51,11 +51,15 @@ export function VolumeCalculator() {
     }
   }, [shape, values]);
 
-  const formatVolume = (vol: number): string => {
-    if (vol >= 1e9) return vol.toExponential(4);
+  const formatVolume = (vol: number): React.ReactNode => {
+    if (vol >= 1e9 || (vol !== 0 && vol < 0.0001)) {
+      const exp = Math.floor(Math.log10(Math.abs(vol)));
+      const coeff = vol / Math.pow(10, exp);
+      const coeffStr = coeff.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+      return <>{coeffStr} × 10<sup>{exp}</sup></>;
+    }
     if (vol >= 1000)
       return vol.toLocaleString("en-US", { maximumFractionDigits: 4 });
-    if (vol < 0.0001) return vol.toExponential(4);
     return vol.toLocaleString("en-US", { maximumFractionDigits: 6 });
   };
 
